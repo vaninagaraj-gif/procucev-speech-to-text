@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpeakFlow — Speech to Text</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">Speak<span>Flow</span></a>
+    <span class="top-note">AI-powered multilingual transcription</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">REAL-TIME SPEECH RECOGNITION</p>
+      <h1>Your voice, <span>in words.</span></h1>
+      <p class="subheading">Speak naturally in English, Hindi, or a mix of languages. Your transcript appears as audio chunks are processed.</p>
+    </section>
+
+    <section class="workspace card">
+      <div class="section-heading">
+        <div>
+          <h2>Live transcription</h2>
+          <p>Allow microphone access to get started.</p>
+        </div>
+        <span id="statusPill" class="status-pill">Ready</span>
+      </div>
+
+      <div class="record-panel">
+        <button id="recordButton" class="record-button" aria-label="Start recording">
+          <span id="recordIcon">●</span>
+        </button>
+        <div>
+          <strong id="recordTitle">Ready to listen</strong>
+          <p id="recordDescription">Press the microphone to start recording</p>
+        </div>
+      </div>
+
+      <div class="transcript-label">
+        <label for="transcriptText">Your transcript</label>
+        <span id="wordCount">0 words</span>
+      </div>
+      <textarea id="transcriptText" placeholder="Your spoken words will appear here..." spellcheck="false"></textarea>
+
+      <div class="actions">
+        <button id="clearButton" class="button secondary">Clear text</button>
+        <button id="saveButton" class="button primary">Save transcript</button>
+      </div>
+      <p id="message" class="message" role="status"></p>
+      <p class="hint">Tip: Speak in short, clear sentences. Transcription is processed in short audio chunks.</p>
+    </section>
+
+    <section class="history-section">
+      <div class="history-heading">
+        <div>
+          <p class="eyebrow">YOUR LIBRARY</p>
+          <h2>Transcription history</h2>
+        </div>
+        <input id="searchInput" class="search" type="search" placeholder="Search transcripts...">
+      </div>
+      <div id="historyList" class="history-list">
+        <div class="empty-state">Loading your saved transcripts...</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Built with Spring Boot · PostgreSQL · Faster-Whisper</footer>
+  <script src="/app.js"></script>
+</body>
+</html>

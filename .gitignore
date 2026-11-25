@@ -1,0 +1,16 @@
+target/
+*.class
+.idea/
+.vscode/
+*.iml
+.env
+.env.*
+!.env.example
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+*.db
+data/

@@ -1,0 +1,41 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: speechdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d speechdb"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  speech-service:
+    build: ./speech-service
+    environment:
+      WHISPER_MODEL: ${WHISPER_MODEL:-small}
+      WHISPER_DEVICE: cpu
+      WHISPER_COMPUTE_TYPE: int8
+    ports:
+      - "8001:8001"
+
+  backend:
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy
+      speech-service:
+        condition: service_started
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/speechdb
+      DB_USERNAME: postgres
+      DB_PASSWORD: postgres
+      SPEECH_SERVICE_URL: http://speech-service:8001
+    ports:
+      - "8080:8080"
+
+volumes:
+  postgres_data:

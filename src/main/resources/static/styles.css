@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+:root{--ink:#18231f;--muted:#77817c;--green:#147d5a;--pale:#eaf5ef;--line:#e7ece8;--bg:#f7f9f7}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif}
+.topbar{height:70px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(calc((100% - 1040px)/2),24px)}
+.brand{font:800 22px Manrope,sans-serif;color:var(--ink);text-decoration:none;letter-spacing:-1px}.brand span{color:var(--green)}
+.top-note{color:var(--muted);font-size:13px}
+.container{max-width:920px;margin:58px auto;padding:0 22px}
+.hero{text-align:center;margin-bottom:34px}.eyebrow{font-size:11px;letter-spacing:1.8px;color:var(--green);font-weight:700}
+h1,h2,strong{font-family:Manrope,sans-serif}h1{font-size:clamp(34px,6vw,52px);letter-spacing:-2px;margin:10px 0}h1 span{color:var(--green)}
+.subheading{max-width:600px;margin:0 auto;color:var(--muted);line-height:1.7;font-size:15px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 12px 40px #203b2a0a}
+.workspace{padding:28px}
+.section-heading,.history-heading{display:flex;align-items:center;justify-content:space-between;gap:18px}
+h2{font-size:20px;letter-spacing:-.5px;margin:0 0 5px}.section-heading p{color:var(--muted);font-size:13px;margin:0}
+.status-pill{font-size:12px;background:#f0f2f0;color:#68736c;border-radius:30px;padding:7px 12px}.status-pill.live{background:#e8f6ee;color:#147d5a}
+.record-panel{display:flex;align-items:center;gap:17px;background:#f8faf8;border:1px solid var(--line);border-radius:13px;padding:18px;margin:25px 0}
+.record-button{width:56px;height:56px;border:0;border-radius:50%;background:var(--green);color:#fff;font-size:26px;cursor:pointer;box-shadow:0 6px 16px #147d5a35}
+.record-button.recording{background:#d64d4d;animation:pulse 1.5s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 10px #d64d4d18}}
+.record-panel strong{font-size:15px}.record-panel p{margin:4px 0 0;color:var(--muted);font-size:13px}
+.transcript-label{display:flex;justify-content:space-between;font-size:13px;font-weight:700;margin-bottom:9px}.transcript-label span{font-weight:400;color:var(--muted)}
+textarea{width:100%;height:180px;resize:vertical;border:1px solid var(--line);border-radius:11px;padding:15px;font:14px/1.7 'DM Sans',sans-serif;color:var(--ink);outline:none}
+textarea:focus,input:focus{border-color:#73ad91;box-shadow:0 0 0 3px #147d5a12}
+.actions{display:flex;justify-content:flex-end;gap:10px;margin-top:14px}
+.button{border:0;border-radius:9px;padding:11px 17px;font:600 13px 'DM Sans';cursor:pointer}.primary{background:var(--green);color:#fff}.secondary{background:#eff3f0;color:#46534b}.button:disabled{opacity:.5;cursor:not-allowed}
+.message{min-height:18px;font-size:13px;color:var(--green);margin:10px 0 0}.message.error{color:#c34444}.hint{font-size:11px;color:#929b95;margin:5px 0 0}
+.history-section{margin-top:48px}.history-heading{margin-bottom:18px}.history-heading h2{font-size:24px}.history-heading .eyebrow{margin:0 0 7px}
+.search{width:240px;border:1px solid var(--line);border-radius:9px;padding:11px 13px;font:13px 'DM Sans';outline:none}
+.history-list{display:grid;gap:12px}.history-item{background:#fff;border:1px solid var(--line);border-radius:13px;padding:17px 19px}
+.item-top{display:flex;justify-content:space-between;gap:12px;align-items:center}.item-top h3{font:700 15px Manrope;margin:0}.date{font-size:11px;color:var(--muted)}
+.preview{font-size:13px;line-height:1.6;color:#626e66;margin:10px 0 13px;white-space:pre-wrap;overflow-wrap:anywhere}
+.item-actions{display:flex;gap:8px}.small-button{border:1px solid var(--line);background:#fff;border-radius:7px;padding:6px 10px;font-size:11px;cursor:pointer;color:#4e5b53}.small-button.delete{color:#bf4949}
+.empty-state{text-align:center;padding:30px;color:var(--muted);background:#fff;border:1px dashed #dce5de;border-radius:12px;font-size:13px}
+footer{text-align:center;color:#98a19b;font-size:11px;padding:35px 10px}
+@media(max-width:600px){.top-note{display:none}.container{margin:35px auto}.workspace{padding:18px}.history-heading{align-items:flex-start;flex-direction:column}.search{width:100%}.section-heading{align-items:flex-start}.item-top{align-items:flex-start;flex-direction:column}}
